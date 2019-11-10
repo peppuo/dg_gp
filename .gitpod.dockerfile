@@ -14,3 +14,7 @@ ENV DEVELOPMENT="true"
 ENV IP="0.0.0.0"
 ENV GP_HOSTNAME="localhost"
 ENV PORT="8080"
+
+ENV DB_NAME="testdb"
+ENV DB_USER="postgres"
+ENV DB_PORT="5432"
