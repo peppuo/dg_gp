@@ -9,6 +9,7 @@ tasks:
 # Ports to expose on workspace startup
 ports:
   - port: 8080
+  - port: 5432
 
 # Install vscode extensions
 vscode:
