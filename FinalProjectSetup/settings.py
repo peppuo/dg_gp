@@ -29,7 +29,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    os.getenv('C9_HOSTNAME'),  # Cloud9
+    os.getenv('GP_HOSTNAME'),  # GitPod
     os.getenv('HOSTNAME'),     # Heroku
     os.getenv('DATABASE_URL'), # Postgres in Environment
 ]
