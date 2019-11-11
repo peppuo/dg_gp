@@ -2,11 +2,20 @@
 image:
   file: .gitpod.dockerfile
 
-# Command to start on workspace startup   
+# Commands on:
 tasks:
- - init: . ${GITPOD_REPO_ROOT}/init_tasks.sh    
+  # workspace initialization
+  - init: >
+      pip3 install --upgrade pip &&
+      pip3 install -r requirements.txt
+  # workspace startup  
+  - command: > 
+      echo 'alias pip="pip3"' >> ~/.bashrc &&
+      echo 'alias python="python3"' >> ~/.bashrc &&
+      echo 'alias run="python3 manage.py runserver $IP:$PORT"' >> ~/.bashrc &&
+      source ~/.bashrc
 
-# Ports to expose on workspace startup
+# Ports to expose
 ports:
   - port: 8080
   - port: 5432
