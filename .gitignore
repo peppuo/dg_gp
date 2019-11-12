@@ -1,6 +1,5 @@
 .c9/
 *.pyc
 __pycache__/
-*/migrations/*
 staticfiles/
 
