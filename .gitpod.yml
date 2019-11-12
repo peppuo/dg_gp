@@ -14,7 +14,8 @@ tasks:
       echo 'alias python="python3"' >> ~/.bashrc &&
       echo 'alias run="python3 manage.py runserver $IP:$PORT"' >> ~/.bashrc &&
       source ~/.bashrc &&
-      python manage.py collectstatic
+      python manage.py collectstatic %%
+      run
 
 # Ports to expose
 ports:
