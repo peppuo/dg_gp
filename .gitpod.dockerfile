@@ -24,7 +24,7 @@ RUN mkdir -p ~/.pg_ctl/bin ~/.pg_ctl/data ~/.pg_ctl/sockets \
  && printf "#!/bin/bash\npg_ctl -D ~/.pg_ctl/data/ -l ~/.pg_ctl/log -o \"-k ~/.pg_ctl/sockets\" stop\n" > ~/.pg_ctl/bin/pg_stop \
  && chmod +x ~/.pg_ctl/bin/*
 ENV PATH="$PATH:$HOME/.pg_ctl/bin"
-ENV DATABASE_URL="postgresql://gitpod@localhost"
+ENV DB_URL="postgresql://gitpod@localhost"
 ENV PGHOSTADDR="127.0.0.1"
 ENV PGDATABASE="postgres"
 
@@ -43,4 +43,4 @@ ENV PORT="8080"
 ENV DB_NAME="testdb"
 ENV DB_USER="postgres"
 ENV DB_PORT="5432"
-ENV DATABASE_URL="database-2.cxkorvs3vzph.us-east-1.rds.amazonaws.com"
+

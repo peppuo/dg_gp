@@ -4,9 +4,9 @@ import psycopg2
 
 conn = psycopg2.connect(
     database='testdb',
-    user='gitpod',
+    user='postgres',
     password=os.getenv('DB_PASSWORD'),
-    host=os.getenv('DATABASE_URL'),
+    host="database-2.cxkorvs3vzph.us-east-1.rds.amazonaws.com", # os.getenv('DATABASE_URL'),
     port=5432,
 )
 
