@@ -5,7 +5,7 @@ USER root
 RUN apt-get update && apt-get install -y \
     # Install Heroku CLI
     && curl https://cli-assets.heroku.com/install.sh | sh \
-    # Install Postgres
+    # Install Postgres https://github.com/gitpod-io/workspace-images/blob/master/postgres/Dockerfile
     && sudo apt-get install -y postgresql postgresql-contrib \
     # Clean-up
     && sudo apt-get clean \
