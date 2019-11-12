@@ -1,4 +1,5 @@
 from django.db import models
+from django.db.models import F, Q
 
 
 class Department(models.Model):
@@ -47,10 +48,21 @@ class User(models.Model):
         return self.email_address
 
 
-# class Email(models.Model):
-#     user = models.ManyToManyField(User)
-#     number_emails = models.PositiveIntegerField()
-#     sent = models.DateTimeField()
+class Log(models.Model):
+    task = models.ForeignKey(Task, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    satus = models.ForeignKey(Status, on_delete=models.CASCADE)
+    number_emails = models.PositiveIntegerField()
+    started = models.DateTimeField()
+    finished = models.DateTimeField()
 
-#     def __str__(self):
-#         return self.user, self.number_emails
+    def __str__(self):
+        return self.task, self.user, self.started, self.finished
+
+    class Meta:
+        constraints = [
+            models.CheckConstraint(
+                check=Q(started__lt=F('finished')),
+                name='started_lt_finished',
+            ),
+        ]
