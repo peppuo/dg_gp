@@ -1,7 +1,9 @@
 from django.contrib import admin
 
-from .models import UserInfo, Department, Email
+# from .models import Category, Department  # , Email, Status, User
 
-admin.site.register(UserInfo)
-admin.site.register(Department)
-admin.site.register(Email)
+# admin.site.register(Category)
+# admin.site.register(Department)
+# admin.site.register(Email)
+# admin.site.register(User)
+# admin.site.register(Status)

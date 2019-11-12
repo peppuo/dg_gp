@@ -13,21 +13,22 @@ conn = psycopg2.connect(
 cur = conn.cursor()
 
 
-
 # Show Databases
-cur.execute("""
+cur.execute(
+    """
     SELECT
        datname
     FROM
        pg_database;
-"""
+    """
 )
 res_db = cur.fetchall()
 print(res_db)
 
 
 # Create a sample table
-cur.execute("""
+cur.execute(
+    """
     CREATE TABLE account (
        user_id serial PRIMARY KEY,
        username VARCHAR (50) UNIQUE NOT NULL,
@@ -44,7 +45,8 @@ print(res_create_table)
 
 
 # Create a sample table
-cur.execute("""
+cur.execute(
+    """
     CREATE TABLE easy (
        username VARCHAR (50),
        password VARCHAR (50),
@@ -55,7 +57,8 @@ conn.commit()
 
 
 # Show Tables
-cur.execute("""
+cur.execute(
+    """
     SELECT
        *
     FROM
@@ -63,14 +66,14 @@ cur.execute("""
     WHERE
        schemaname != 'pg_catalog'
     AND schemaname != 'information_schema';
-"""
+    """
 )
 res_table = cur.fetchall()
 print(res_table)
 
 
-
-cur.execute("""
+cur.execute(
+    """
     INSERT INTO easy (username, password, email)
     VALUES ('busy', 'bpassy', 'bemaily@emaily.com');
     """
@@ -80,15 +83,13 @@ row_count = cur.rowcount
 print('row_count', row_count)
 
 
-cur.execute("""
-    SELECT * FROM easy;
-    """
-)
+cur.execute("SELECT * FROM easy;")
 res_table = cur.fetchall()
 print(res_table)
 
 
-cur.execute("""
+cur.execute(
+    """
     INSERT INTO account (username, password, email, created_on)
     VALUES ('username', 'password', 'email@email.com', '2019-10-22 19:10:25-07');
     """
@@ -97,26 +98,23 @@ conn.commit()
 row_count = cur.rowcount
 print('row_count', row_count)
 
-
-cur.execute("""
-    SELECT * FROM account;
-    """
-)
+# cur.execute("SELECT * FROM dummyApp_Email;")
+cur.execute("SELECT * FROM account;")
 res_table = cur.fetchall()
 print(res_table)
 
 
-
-
-cur.execute("""
+cur.execute(
+    """
     DROP TABLE easy;
     DROP TABLE account;
-"""
+    """
 )
 conn.commit()
 
 # Show Tables
-cur.execute("""
+cur.execute(
+    """
     SELECT
        *
     FROM
@@ -124,22 +122,20 @@ cur.execute("""
     WHERE
        schemaname != 'pg_catalog'
     AND schemaname != 'information_schema';
-"""
+    """
 )
 res_table = cur.fetchall()
 print(res_table)
-
-
 
 
 # Close Connection
 conn.close()
 
 
-## If error message appear
+# If error message appear
 
-# InFailedSqlTransaction: 
-#   current transaction is aborted, commands ignored until end of transaction block
+# InFailedSqlTransaction:
+#   current transaction is aborted, commands ignored until end of transaction
+#   block
 
 # do:  conn.reset() and it will work again
-
