@@ -41,5 +41,6 @@ ENV GP_HOSTNAME="localhost"
 ENV PORT="8080"
 
 ENV DB_NAME="testdb"
-ENV DB_USER="gitpod"
+ENV DB_USER="postgres"
 ENV DB_PORT="5432"
+ENV DATABASE_URL="database-2.cxkorvs3vzph.us-east-1.rds.amazonaws.com"
