@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y \
 
 
 # Switch to gitpod user
-# USER gitpod
+USER gitpod
 
 # Setup PostgreSQL server for user gitpod
 ENV PATH="$PATH:/usr/lib/postgresql/11/bin"
@@ -44,3 +44,5 @@ ENV DB_NAME="testdb"
 ENV DB_USER="postgres"
 ENV DB_PORT="5432"
 
+# Switch back to root user
+USER root
