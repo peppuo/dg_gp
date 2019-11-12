@@ -53,4 +53,4 @@ class User(models.Model):
 #     sent = models.DateTimeField()
 
 #     def __str__(self):
-#         return self.users, self.number_emails
+#         return self.user, self.number_emails
