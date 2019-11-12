@@ -48,7 +48,7 @@ class User(models.Model):
 
 
 # class Email(models.Model):
-#     users = models.ManyToManyField(UserInfo)
+#     user = models.ManyToManyField(User)
 #     number_emails = models.PositiveIntegerField()
 #     sent = models.DateTimeField()
 
