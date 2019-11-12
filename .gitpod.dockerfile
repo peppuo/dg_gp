@@ -11,6 +11,10 @@ RUN apt-get update && apt-get install -y \
     && sudo apt-get clean \
     && sudo rm -rf /var/cache/apt/* /var/lib/apt/lists/* /tmp/*
 
+
+# Switch to gitpod user
+USER gitpod
+
 # Setup PostgreSQL server for user gitpod
 ENV PATH="$PATH:/usr/lib/postgresql/11/bin"
 ENV PGDATA="/home/gitpod/.pg_ctl/data"
