@@ -40,8 +40,6 @@ cur.execute(
 )
 
 conn.commit()
-res_create_table = cur.fetchall()
-print(res_create_table)
 
 
 # Create a sample table

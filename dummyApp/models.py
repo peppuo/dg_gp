@@ -34,7 +34,7 @@ class Task(models.Model):
         return self.name
 
 
-class UserInfo(models.Model):
+class User(models.Model):
     first_name = models.CharField(max_length=200)
     last_name = models.CharField(max_length=200)
     email_address = models.EmailField(max_length=254)
