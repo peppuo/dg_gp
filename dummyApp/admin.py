@@ -1,5 +1,4 @@
 from django.contrib import admin
-
 from .models import Category, Department, Log, Status, Task, User
 
 admin.site.register(Category)

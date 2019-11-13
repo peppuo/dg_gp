@@ -52,7 +52,6 @@ class Log(models.Model):
     task = models.ForeignKey(Task, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     satus = models.ForeignKey(Status, on_delete=models.CASCADE)
-    number_emails = models.PositiveIntegerField()
     started = models.DateTimeField()
     finished = models.DateTimeField()
 
