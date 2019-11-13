@@ -51,7 +51,7 @@ class User(models.Model):
 class Log(models.Model):
     task = models.ForeignKey(Task, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    satus = models.ForeignKey(Status, on_delete=models.CASCADE)
+    status = models.ForeignKey(Status, on_delete=models.CASCADE)
     started = models.DateTimeField()
     finished = models.DateTimeField()
 
