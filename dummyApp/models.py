@@ -52,11 +52,11 @@ class Log(models.Model):
     task = models.ForeignKey(Task, on_delete=models.CASCADE)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     status = models.ForeignKey(Status, on_delete=models.CASCADE)
-    started = models.DateTimeField(blank=True)
-    finished = models.DateTimeField(blank=True)
+    started = models.DateTimeField(blank=True, null=True)
+    finished = models.DateTimeField(blank=True, null=True)
 
     def __str__(self):
-        return self.task, self.user, self.started, self.finished
+        return str((self.task, self.user, self.started, self.finished))
 
     class Meta:
         constraints = [
