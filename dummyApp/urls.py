@@ -4,5 +4,8 @@ from . import views
 
 
 urlpatterns = [
-    path('template/', views.render_template, name='render_template'),
+    path('', views.render_base, name='home'),
+    path('task-logs/', views.render_logs, name='render_logs'),
+    path('template-form/<int:pk>', views.render_template,
+         name='practice_form_template'),
 ]

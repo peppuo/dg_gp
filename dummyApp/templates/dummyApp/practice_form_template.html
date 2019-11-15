@@ -1,0 +1,16 @@
+{% extends 'dummyApp/base.html' %} 
+
+{% block content %}
+
+<div class="container">
+
+  <h3>Practice From Template</h3>
+
+  <form action="{% url 'practice_form_template' user.id %}" method="post">
+      {% csrf_token %}
+      {{ userform }}
+      <input type="submit" value="Edit Order">
+  </form>
+
+</div>
+{% endblock %}
