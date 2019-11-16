@@ -1,5 +1,5 @@
 from django import forms
-from .models import User
+from .models import User, Log
 
 
 class UserForm(forms.ModelForm):
@@ -10,3 +10,13 @@ class UserForm(forms.ModelForm):
         labels = {'first_name': 'First Name', 'last_name': 'Last Name',
                   'email_address': 'Email Address', 'department': 'Department',
                   }
+
+
+class LogForm(forms.ModelForm):
+
+    class Meta:
+        model = Log
+        fields = ('task', 'user', 'status', 'started', 'finished')
+        labels = {'task': 'Task', 'user': 'Email Address', 'status': 'Status',
+                  'started': 'Started', 'finished': 'Finished', }
+

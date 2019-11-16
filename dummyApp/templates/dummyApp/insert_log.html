@@ -1,0 +1,16 @@
+{% extends 'dummyApp/base.html' %} 
+
+{% block content %}
+
+<div class="container">
+
+  <h3>Practice Insert Log Form</h3>
+
+  <form action="{% url 'insert_log' %}" method="post">
+      {% csrf_token %}
+      {{ log_form }}
+      <input type="submit" value="Insert Log">
+  </form>
+
+</div>
+{% endblock %}

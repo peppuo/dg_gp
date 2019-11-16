@@ -1,3 +1,8 @@
 from django.test import TestCase
 
-# Create your tests here.
+
+class RenderPagesTests(TestCase):
+
+    def test_render_base(self):
+        pass
+    
