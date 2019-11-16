@@ -4,14 +4,14 @@
 
 <div class="container">
 
-  <h3>Practice Insert Log Form</h3>
-
+  <h3>Practice Edit Log Form</h3>
+  
   <h2>{{ note }}</h2>
 
-  <form action="{% url 'insert_log' %}" method="post">
+  <form action="{% url 'edit_log' log.id %}" method="post">
       {% csrf_token %}
       {{ form }}
-      <input type="submit" value="Insert Log">
+      <input type="submit" value="Edit Log">
   </form>
 
 </div>

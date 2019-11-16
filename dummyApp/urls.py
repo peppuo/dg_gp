@@ -5,9 +5,9 @@ from . import views
 
 urlpatterns = [
     path('', views.render_base, name='home'),
-    path('task-logs/', views.render_logs, name='render_logs'),
-    path('insert-log/', views.render_insert_log, name='insert_log'),
-    path('edit-user/<int:pk>', views.render_edit_user,
+    path('task-logs/', views.get_logs, name='get_logs'),
+    path('insert-log/', views.insert_log, name='insert_log'),
+    path('edit-log/<int:pk>', views.edit_log, name='edit_log'),
+    path('edit-user/<int:pk>', views.edit_user,
          name='edit_user'),
-
 ]
