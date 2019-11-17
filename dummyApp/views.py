@@ -9,7 +9,7 @@ def render_base(request):
 
 def get_logs(request):
     logs = Log.objects.all()
-    return render(request, 'dummyApp/logs_template.html')
+    return render(request, 'dummyApp/logs_template.html', {'logs': logs, })
 
 
 def insert_log(request):
@@ -27,7 +27,7 @@ def insert_log(request):
                   {'form': form})
 
 
-def edit_log(request, pk=1):
+def edit_log(request, pk):
     log = Log.objects.get(pk=pk)
     form = LogForm(instance=log)
     if request.method == 'POST':
@@ -47,7 +47,7 @@ def edit_log(request, pk=1):
                   {'log': log, 'form': form})
 
 
-def edit_user(request, pk=1):
+def edit_user(request, pk):
     user = User.objects.get(pk=pk)
     form = UserForm(instance=user)
     return render(request, 'dummyApp/edit_user.html',

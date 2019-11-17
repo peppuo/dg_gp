@@ -1,8 +1,7 @@
 from django.test import TestCase
 
 
-class RenderPagesTests(TestCase):
+class LogTestCase(TestCase):
 
     def test_render_base(self):
-        pass
-    
+        self.assertEqual(1, 0)
