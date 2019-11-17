@@ -15,13 +15,18 @@ def get_logs(request):
 def insert_log(request):
     if request.method == 'POST':
         filled_form = LogForm(request.POST)
-        if filled_form.is_valid():
+        print('\n\nfilled_form:', filled_form)
+        check_constrain = filled_form.cleaned_data['started'] < filled_form.cleaned_data['finished']
+        print('\n\ncheck_constrain:', check_constrain)
+        if filled_form.is_valid() and check_constrain:
             filled_form.save()
             return redirect(reverse('get_logs'))
+        elif not check_constrain:
+            note = 'Log not inserted. The start time is after the finish time!'
         else:
-            note = 'The order was not created, please review details'
-            return render(request, 'dummyApp/insert_log.html',
-                          {'form': filled_form, 'note': note})
+            note = 'Log not inserted, please review details!'
+        return render(request, 'dummyApp/insert_log.html',
+                      {'form': filled_form, 'note': note})
     form = LogForm()
     return render(request, 'dummyApp/insert_log.html',
                   {'form': form})
