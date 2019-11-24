@@ -84,25 +84,9 @@ WSGI_APPLICATION = 'FinalProjectSetup.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-if os.getenv('DEVELOPMENT') == 'true':
-    print('Development Database')
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': os.getenv('DB_NAME'),
-            'USER': os.getenv('DB_USER'),
-            'PASSWORD': os.getenv('DB_PASSWORD'),
-            'HOST': os.getenv('DATABASE_URL'),
-            'PORT': os.getenv('DB_PORT'),
-        }
-    }
-elif os.getenv('DEVELOPMENT') == 'false':
-    print('Production Database')
-    DATABASES = {
-        'default': dj_database_url.parse(os.getenv('DATABASE_URL'))
-    }
-else:
-    print('No Database configuration found!')
+DATABASES = {
+    'default': dj_database_url.parse(os.getenv('DATABASE_URL'))
+}
 
 
 # Password validation
