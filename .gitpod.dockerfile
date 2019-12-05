@@ -6,7 +6,7 @@ RUN apt-get update && apt-get install -y \
     # Install Heroku CLI
     #&& curl https://cli-assets.heroku.com/install.sh | sh \
     && curl https://cli-assets.heroku.com/install-ubuntu.sh | sh \
-    && sudo chown -R gitpod: /home/gitpod/.cache/heroku
+    && sudo chown -R gitpod: /home/gitpod/.cache/heroku \
     # Install Postgres CLI psql
     && sudo apt-get install -y postgresql postgresql-contrib \
     # Clean-up
