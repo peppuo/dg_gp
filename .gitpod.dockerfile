@@ -4,7 +4,8 @@ FROM gitpod/workspace-full:latest
 USER root
 RUN apt-get update && apt-get install -y \
     # Install Heroku CLI
-    && curl https://cli-assets.heroku.com/install.sh | sh \
+    #&& curl https://cli-assets.heroku.com/install.sh | sh \
+    && curl https://cli-assets.heroku.com/install-ubuntu.sh | sh \
     && sudo chown gitpod:gitpod /home/gitpod/.cache/heroku
     # Install Postgres CLI psql
     && sudo apt-get install -y postgresql postgresql-contrib \
