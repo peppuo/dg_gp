@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 import dj_database_url
-import django_heroku
+# import django_heroku
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -32,15 +32,14 @@ else:
     DEBUG = False
 
 ALLOWED_HOSTS = [
-    os.getenv('GP_HOSTNAME'),   # GitPod
-    os.getenv('HOSTNAME'),      # Heroku
-    os.getenv('DATABASE_URL'),  # Postgres in Environment
+    '8080-dc008c2a-9a96-49c9-a026-0f75ebc208ac.ws-eu01.gitpod.io',
 ]
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'tryMaterialize.apps.TrymaterializeConfig',
     'dummyApp.apps.DummyappConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -65,7 +64,7 @@ ROOT_URLCONF = 'FinalProjectSetup.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates'), ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -124,9 +123,11 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
+STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 # Automatic Configuration
 # https://devcenter.heroku.com/articles/django-app-configuration
 
-django_heroku.settings(locals(), databases=False)
+# django_heroku.settings(locals(), databases=False)

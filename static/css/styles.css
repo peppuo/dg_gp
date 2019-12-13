@@ -1,0 +1,170 @@
+body 
+{
+    background-color: #f4f4f4;
+}
+
+.card-panel 
+{
+    margin-top: 1.5rem;    
+}
+
+.section-title 
+{
+    margin-top: 0.5rem;
+}
+
+
+
+/* Table */
+
+.dataTables_length 
+{
+    height: 100%;  
+    display: flex;
+    align-items: flex-end;
+}
+
+.dataTables_length label
+{
+    font-size: 14px;
+    color: black;
+}
+
+.dataTables_length label select
+{
+    width: auto;
+    height: auto;
+    padding: 5px;
+
+    border: none;
+    border-bottom: 1px solid #bdbdbd;
+    border-radius: 2px;
+    background-color: transparent; 
+
+    font-size: 14px;
+    
+    display: inline-block;
+}
+
+#tasksTable 
+{
+    width: 100% !important;
+}
+
+.mdl-cell 
+{
+    margin-top: 0;    
+}
+
+.taskStyle
+{
+    min-width: 200px;
+    padding-right: 1em;
+}
+
+.dateColStyle 
+{
+    min-width: 110px;
+    white-space: nowrap;
+}
+
+.descriptionStyle
+{
+    min-width: 10000px;
+}
+
+.descriptionStyle2
+{
+    min-width: 300px;
+}
+
+.textRight
+{
+    text-align: right;
+}
+
+.textCenter
+{
+    text-align: center;
+}
+
+.issueIconStyle
+{
+    color: red;
+}
+
+
+
+/* Pagination buttons */
+
+.mdl-button--raised.mdl-button--colored
+{
+    background-color: #26a69a;
+}
+
+.mdl-button--raised.mdl-button--colored:hover
+{    
+    background-color: #00897b;
+}
+
+
+
+/* Fixed/Action Button */
+
+.fixed-action-btn
+{
+    bottom: 2.75em; 
+    right: 2.75em;
+}
+
+.btn-floating:hover
+{
+    background-color: #00897b;
+}
+
+@media (max-width: 990px)
+{
+  .fixed-action-btn {
+    bottom: 1.25em; 
+    right: 1.25em;
+  }
+}
+
+
+
+/* Drop down menu in each row */
+
+.menu-dots 
+{
+    color: black;
+}
+
+.dropdown-content li>span>a 
+{
+    color: black; 
+}
+
+.dropdown-content 
+{
+    min-width: fit-content;
+}
+
+
+
+/* Navbar */
+
+.sidenav-overlay 
+{
+    z-index: 995;
+}
+
+#main-nav
+{
+    line-height: 64px;
+}
+
+nav .brand-logo
+{
+    padding-left: 10px;
+    padding-right: 10px;
+}
