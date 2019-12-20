@@ -15,9 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from accounts.views import index
+from accounts import urls as accounts_urls
 
 urlpatterns = [
+    path('', index, name='index'),
     path('', include('tryMaterialize.urls')),
+    path('accounts/', include(accounts_urls)),
     path('dummyApp/', include('dummyApp.urls')),
     path('admin/', admin.site.urls),
 ]

@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 import dj_database_url
-# import django_heroku
+import django_heroku
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -39,6 +39,7 @@ ALLOWED_HOSTS = [
 # Application definition
 
 INSTALLED_APPS = [
+    'accounts.apps.AccountsConfig',
     'tryMaterialize.apps.TrymaterializeConfig',
     'dummyApp.apps.DummyappConfig',
     'django.contrib.admin',
@@ -47,6 +48,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # https://github.com/kalwalkden/django-materializecss-form
+    'materializecssform',
 ]
 
 MIDDLEWARE = [
@@ -123,11 +126,14 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
-STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+# STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
 # Automatic Configuration
 # https://devcenter.heroku.com/articles/django-app-configuration
 
-# django_heroku.settings(locals(), databases=False)
+django_heroku.settings(locals(), databases=False)
+
+
+# LOGIN_REDIRECT_URL = '/'
