@@ -39,9 +39,6 @@ ALLOWED_HOSTS = [
 # Application definition
 
 INSTALLED_APPS = [
-    'accounts.apps.AccountsConfig',
-    'tryMaterialize.apps.TrymaterializeConfig',
-    'dummyApp.apps.DummyappConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -50,6 +47,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # https://github.com/kalwalkden/django-materializecss-form
     'materializecssform',
+    'accounts.apps.AccountsConfig',
+    'tryMaterialize.apps.TrymaterializeConfig',
+    'dummyApp.apps.DummyappConfig',
+    'mattasks.apps.MattasksConfig',
 ]
 
 MIDDLEWARE = [
@@ -129,12 +130,3 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'), )
 
-
-
-# Automatic Configuration
-# https://devcenter.heroku.com/articles/django-app-configuration
-
-# django_heroku.settings(locals(), databases=False)
-
-
-# LOGIN_REDIRECT_URL = '/'

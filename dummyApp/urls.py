@@ -8,6 +8,6 @@ urlpatterns = [
     path('task-logs/', views.get_logs, name='get_logs'),
     path('insert-log/', views.insert_log, name='insert_log'),
     path('edit-log/<int:pk>', views.edit_log, name='edit_log'),
-    path('edit-user/<int:pk>', views.edit_user,
-         name='edit_user'),
+    # path('edit-user/<int:pk>', views.edit_user,
+    #      name='edit_user'),
 ]

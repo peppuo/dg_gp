@@ -1,6 +1,6 @@
 from django.shortcuts import render, reverse, redirect
-from .forms import UserForm, LogForm
-from .models import User, Log
+from .forms import LogForm
+from .models import Log
 
 
 def render_base(request):

@@ -29,18 +29,18 @@
                     {% if user.is_authenticated %}
                     <a href="#" data-target="mobile-nav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                     <ul id="main-nav" class="right hide-on-med-and-down">
-                        <li><a href="{% url 'task_table' %}">Tasks</a></li>
+                        <li><a href="{% url 'mattasks' %}">Tasks</a></li>
                           <li><a href="">Completed Tasks</a></li>
-                        <li><a href="{% url 'logout' %}">Logout</a></li>
+                        <li><a href="">Logout</a></li>
                     </ul>
                     {% endif %}
                 </div>
             </nav>
             {% if user.is_authenticated %}
             <ul class="sidenav" id="mobile-nav">
-                <li><a href="{% url 'task_table' %}">Tasks</a></li>
+                <li><a href="{% url 'mattasks' %}">Tasks</a></li>
                 <li><a href="">Completed Tasks</a></li>
-                <li><a href="{% url 'logout' %}">Logout</a></li>
+                <li><a href="">Logout</a></li>
             </ul>
             {% endif %}
         </div>
@@ -52,11 +52,7 @@
     </div>
 
 
-    <script
-    src="https://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
-
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="  crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.1/js/materialize.min.js" integrity="sha256-SrBfGi+Zp2LhAvy9M1bWOCXztRU9Ztztxmu5BcYPcPE=" crossorigin="anonymous"></script>
    
     <!--Initialize side Navbar for small screens-->
@@ -66,10 +62,6 @@
             var instances_sn = M.Sidenav.init(elems_sn);
         });
     </script>
-    
-    <!--JavaScript at end of body for optimized loading-->
-    <!-- <script src="../static/js/jquery-3.3.1.min.js"></script> -->
-    <!-- <script src="../static/js/materialize.min.js"></script> -->
 
     {% block js %}
     {% endblock %}

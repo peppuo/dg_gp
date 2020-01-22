@@ -23,5 +23,6 @@ urlpatterns = [
     path('', include('tryMaterialize.urls')),
     path('accounts/', include(accounts_urls)),
     path('dummyApp/', include('dummyApp.urls')),
+    path('mattasks/', include('mattasks.urls')),
     path('admin/', admin.site.urls),
 ]

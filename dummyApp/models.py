@@ -35,28 +35,28 @@ class Task(models.Model):
         return self.name
 
 
-class User(models.Model):
-    first_name = models.CharField(max_length=200)
-    last_name = models.CharField(max_length=200)
-    email_address = models.EmailField(max_length=254)
-    department = models.ForeignKey(Department, on_delete=models.CASCADE)
-    notes = models.TextField()
-    # Timestamp at creation
-    registered = models.DateTimeField(auto_now_add=True, editable=False)
+# class User(models.Model):
+#     first_name = models.CharField(max_length=200)
+#     last_name = models.CharField(max_length=200)
+#     email_address = models.EmailField(max_length=254)
+#     department = models.ForeignKey(Department, on_delete=models.CASCADE)
+#     notes = models.TextField()
+#     # Timestamp at creation
+#     registered = models.DateTimeField(auto_now_add=True, editable=False)
 
-    def __str__(self):
-        return self.email_address
+#     def __str__(self):
+#         return self.email_address
 
 
 class Log(models.Model):
     task = models.ForeignKey(Task, on_delete=models.CASCADE)
-    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    # user = models.ForeignKey(User, on_delete=models.CASCADE)
     status = models.ForeignKey(Status, on_delete=models.CASCADE)
     started = models.DateTimeField(blank=True, null=True)
     finished = models.DateTimeField(blank=True, null=True)
 
     def __str__(self):
-        return str((self.task, self.user, self.started, self.finished))
+        return str((self.task, self.started, self.finished))
 
     class Meta:
         constraints = [
